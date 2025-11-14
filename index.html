@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaSourceCode - Transform Your Coding Journey 🚀</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Master programming with free courses, notes, and interactive learning. Join 50,000+ developers worldwide.">
+    <meta name="keywords" content="programming courses, coding tutorials, free education, web development, DSA">
+    <meta name="theme-color" content="#4F46E5">
+    
+    <!-- PWA Meta -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+	<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "JavaSourceCode",
+  "description": "Free Engineering & Computer Science Study Materials",
+  "url": "https://javasourcecode.com",
+  "logo": "https://javasourcecode.com/logo.png",
+  "sameAs": [
+    "https://www.instagram.com/naturelensbyabhi"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "abhishekyadav954698@gmail.com",
+    "contactType": "Customer Service"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "BTech Computer Science Engineering",
+  "description": "Complete BTech CSE study materials",
+  "provider": {
+    "@type": "Organization",
+    "name": "JavaSourceCode"
+  }
+}
+</script>
+</head>
+<body>
+
+    <!-- ========== PARTICLE BACKGROUND ========== -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- ========== LOADING SCREEN ========== -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader-container">
+            <div class="code-animation">
+                <div class="code-line"></div>
+                <div class="code-line"></div>
+                <div class="code-line"></div>
+                <div class="code-line"></div>
+            </div>
+            <div class="loading-percentage" id="loadingPercentage">0%</div>
+            <p class="loading-text">Initializing Awesome Experience<span class="dots"></span></p>
+        </div>
+    </div>
+
+    <!-- ========== PROGRESS BAR ========== -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar glass-morphism" id="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="location.reload()">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span class="logo-text">Java<span class="highlight">Source</span>Code</span>
+                
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#courses" class="nav-link">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Courses</span>
+                </a>
+                <a href="#notes" class="nav-link">
+                    <i class="fas fa-book-open"></i>
+                    <span>Notes</span>
+                </a>
+                <a href="#roadmap" class="nav-link">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>Roadmap</span>
+                </a>
+                <a href="#team" class="nav-link">
+                    <i class="fas fa-users"></i>
+                    <span>Team</span>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="icon-btn voice-search" id="voiceSearch" title="Voice Search">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button class="icon-btn theme-toggle" id="themeToggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="streak-badge" id="streakBadge" title="Your Study Streak">
+                    <i class="fas fa-fire"></i>
+                    <span id="streakCount">0</span>
+                </div>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge floating">
+                    <i class="fas fa-rocket"></i>
+                    <span>Welcome to the Future of Learning</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="line typing-effect" id="typingText"></span>
+                    <span class="line gradient-text-animated">Free Premium Resources</span>
+                </h1>
+                
+                <p class="hero-subtitle fade-in">
+                    Join <span class="highlight-number" data-target="50000">0</span>+ developers 
+                    mastering programming with our curated courses, notes, and interactive learning paths.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#courses" class="btn btn-primary btn-glow">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Start Learning</span>
+                        <div class="btn-shine"></div>
+                    </a>
+                    <a href="#notes" class="btn btn-secondary btn-outline">
+                        <i class="fas fa-download"></i>
+                        <span>Download Notes</span>
+                    </a>
+                    <button class="btn btn-voice" id="heroVoiceBtn">
+                        <i class="fas fa-microphone-alt"></i>
+                        <span>Try Voice Search</span>
+                    </button>
+                </div>
+
+                <!-- Live Stats Counter -->
+                <div class="hero-stats">
+                    <div class="stat-card glass-morphism">
+                        <div class="stat-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="250">0</h3>
+                            <p>Premium Courses</p>
+                            <span class="stat-badge">+15 this week</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card glass-morphism">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="50000">0</h3>
+                            <p>Active Learners</p>
+                            <span class="stat-badge online">
+                                <span class="pulse-dot"></span>
+                                <span id="liveUsers">1,234</span> online
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card glass-morphism">
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="150">0</h3>
+                            <p>Study Notes</p>
+                            <span class="stat-badge">All Free</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card glass-morphism">
+                        <div class="stat-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="1000">0</h3>
+                            <p>Hours Content</p>
+                            <span class="stat-badge">& Growing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement Badges -->
+                <div class="achievement-showcase">
+                    <h4>Your Achievements</h4>
+                    <div class="badges-container" id="achievementBadges">
+                        <div class="badge-item locked" data-achievement="first-course">
+                            <i class="fas fa-lock"></i>
+                            <span>First Course</span>
+                        </div>
+                        <div class="badge-item locked" data-achievement="week-streak">
+                            <i class="fas fa-fire"></i>
+                            <span>Week Streak</span>
+                        </div>
+                        <div class="badge-item locked" data-achievement="note-collector">
+                            <i class="fas fa-book"></i>
+                            <span>Note Collector</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse-scroll">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURES HIGHLIGHT ========== -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card glass-morphism">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Instant access to resources with real-time Google Sheets sync</p>
+                </div>
+                
+                <div class="feature-card glass-morphism">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>100% Responsive</h3>
+                    <p>Perfect experience on any device, anywhere, anytime</p>
+                </div>
+                
+                <div class="feature-card glass-morphism">
+                    <div class="feature-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3>Always Free</h3>
+                    <p>No hidden costs, no subscriptions, pure education</p>
+                </div>
+                
+                <div class="feature-card glass-morphism">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered Search</h3>
+                    <p>Voice search & smart filters to find what you need</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== COURSES SECTION ========== -->
+    <section class="courses-section" id="courses">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Explore Learning</span>
+                <h2 class="section-title">
+                    <span class="gradient-text-animated">Premium Courses</span>
+                </h2>
+                <p class="section-subtitle">Handpicked courses updated daily from industry experts</p>
+            </div>
+
+            <!-- Advanced Search & Filters -->
+            <div class="course-controls glass-morphism">
+                <div class="search-wrapper">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search courses, topics, or skills...">
+                        <button class="voice-btn" id="courseVoiceSearch">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <div class="filter-tabs" id="categoryTabs">
+                        <button class="filter-btn active" data-category="all">
+                            <i class="fas fa-border-all"></i>
+                            <span>All Courses</span>
+                        </button>
+                        <!-- Dynamic categories will load here -->
+                    </div>
+
+                    <div class="filter-dropdowns">
+                        <select id="typeFilter" class="custom-select">
+                            <option value="all">All Types</option>
+                            <option value="YouTube">YouTube</option>
+                            <option value="PDF">PDF</option>
+                            <option value="Link">Course Link</option>
+                        </select>
+
+                        <select id="sortFilter" class="custom-select">
+                            <option value="latest">Latest First</option>
+                            <option value="popular">Most Popular</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
+
+                        <button class="view-toggle" id="viewToggle" title="Toggle View">
+                            <i class="fas fa-th"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Grid -->
+            <div class="courses-grid" id="coursesGrid">
+                <div class="loading-courses">
+                    <div class="spinner"></div>
+                    <p>Loading amazing courses...</p>
+                </div>
+            </div>
+
+            <!-- No Results -->
+            <div class="no-results" id="noResults">
+                <div class="no-results-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>No courses found</h3>
+                <p>Try different search terms or filters</p>
+                <button class="btn btn-primary" onclick="resetFilters()">Reset Filters</button>
+            </div>
+
+            <!-- Load More -->
+            <div class="load-more-section" id="loadMoreSection">
+                <button class="btn btn-outline load-more-btn" id="loadMoreBtn">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Load More Courses</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NOTES SECTION (Google Sheets Powered) ========== -->
+    <section class="notes-section" id="notes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Knowledge Library</span>
+                <h2 class="section-title">
+                    <span class="gradient-text-animated">Programming Notes</span>
+                </h2>
+                <p class="section-subtitle">Comprehensive notes with downloadable PDFs - Updated from Google Sheets</p>
+            </div>
+
+            <!-- Notes Filter -->
+            <div class="notes-filter">
+                <button class="filter-btn active" data-filter="all">All Notes</button>
+                <button class="filter-btn" data-filter="Programming">Programming</button>
+                <button class="filter-btn" data-filter="Web Development">Web Dev</button>
+                <button class="filter-btn" data-filter="Database">Database</button>
+            </div>
+
+            <!-- Notes Grid (Dynamic from Google Sheets) -->
+            <div class="notes-grid" id="notesGrid">
+                <div class="loading-courses">
+                    <div class="spinner"></div>
+                    <p>Loading notes library...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LEARNING ROADMAP ========== -->
+    <section class="roadmap-section" id="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Your Journey</span>
+                <h2 class="section-title">
+                    <span class="gradient-text-animated">Learning Roadmap</span>
+                </h2>
+                <p class="section-subtitle">Follow the proven path from beginner to expert</p>
+            </div>
+
+            <div class="roadmap-container">
+                <div class="roadmap-path">
+                    <div class="roadmap-step glass-morphism completed">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Beginner</h3>
+                            <p>Start with fundamentals</p>
+                            <div class="step-topics">
+                                <span class="topic-tag">HTML</span>
+                                <span class="topic-tag">CSS</span>
+                                <span class="topic-tag">JavaScript Basics</span>
+                            </div>
+                        </div>
+                        <div class="step-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-connector"></div>
+
+                    <div class="roadmap-step glass-morphism active">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Intermediate</h3>
+                            <p>Build real projects</p>
+                            <div class="step-topics">
+                                <span class="topic-tag">React</span>
+                                <span class="topic-tag">Node.js</span>
+                                <span class="topic-tag">Databases</span>
+                            </div>
+                        </div>
+                        <div class="step-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-connector"></div>
+
+                    <div class="roadmap-step glass-morphism">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Advanced</h3>
+                            <p>Master complex concepts</p>
+                            <div class="step-topics">
+                                <span class="topic-tag">System Design</span>
+                                <span class="topic-tag">DSA</span>
+                                <span class="topic-tag">DevOps</span>
+                            </div>
+                        </div>
+                        <div class="step-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-connector"></div>
+
+                    <div class="roadmap-step glass-morphism">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Expert</h3>
+                            <p>Become industry ready</p>
+                            <div class="step-topics">
+                                <span class="topic-tag">Architecture</span>
+                                <span class="topic-tag">Leadership</span>
+                                <span class="topic-tag">Best Practices</span>
+                            </div>
+                        </div>
+                        <div class="step-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TEAM SECTION (Flip Cards) ========== -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Meet The Team</span>
+                <h2 class="section-title">
+                    <span class="gradient-text-animated">Our Amazing Team</span>
+                </h2>
+                <p class="section-subtitle">Passionate educators dedicated to your success</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Owner Flip Card -->
+                <div class="team-card-flip">
+                    <div class="flip-card-inner">
+                        <!-- Front -->
+                        <div class="flip-card-front glass-morphism">
+                            <div class="team-image">
+                                <img src="https://i.ibb.co/twKJkx54/Generated-Image-November-13-2025-5-42-PM-removebg-preview.png" alt="Owner">
+                                <div class="team-role-badge">Founder</div>
+                            </div>
+                            <h3>Ranvir Kumar </h3>
+                            <p class="team-role">Founder & Educator of JavaSourceCode</p>
+                            <div class="flip-indicator">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Welcome to JavaSourceCode </span>
+                            </div>
+                        </div>
+                        
+                        <!-- Back -->
+                        <div class="flip-card-back glass-morphism">
+                            <div class="back-content">
+                                <div class="back-header">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <h3>About Us</h3>
+                                </div>
+                                <p>Making quality programming education accessible to everyone, free forever.</p>
+                                
+                                <div class="team-stats">
+                                    <div class="team-stat">
+                                        <i class="fas fa-users"></i>
+                                        <span>50K+ Students</span>
+                                    </div>
+                                    <div class="team-stat">
+                                        <i class="fas fa-book"></i>
+                                        <span>400+ Resources</span>
+                                    </div>
+                                    <div class="team-stat">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.9/5 Rating</span>
+                                    </div>
+                                </div>
+
+                                <div class="social-links-vertical">
+                                    <a href="https://youtube.com/@jsourcecode?si=BiL0_-cWVRJ2PcpS" class="social-btn"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://wa.me/919113324452?text=Hello%20👋%2C%20I%20hope%20you%20are%20doing%20well.%20I%20need%20some%20help%20please%20reply%20when%20you%20get%20time.%20🙂" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Developer Flip Card -->
+                <div class="team-card-flip">
+                    <div class="flip-card-inner">
+                        <!-- Front -->
+                        <div class="flip-card-front glass-morphism">
+                            <div class="team-image">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=abhishek" alt="Abhishek Kumar">
+                                <div class="team-role-badge developer">Developer</div>
+                            </div>
+                            <h3>Abhishek Kumar</h3>
+                            <p class="team-role">Full Stack Developer</p>
+                            <div class="flip-indicator">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Hi 👋 how are you</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Back -->
+                        <div class="flip-card-back glass-morphism">
+                            <div class="back-content">
+                                <div class="back-header">
+                                    <i class="fas fa-code"></i>
+                                    <h3>Abhishek Kumar</h3>
+                                </div>
+                                
+                                <div class="dev-tags">
+                                    <span class="skill-tag"><i class="fas fa-shield-alt"></i> Cybersecurity</span>
+                                    <span class="skill-tag"><i class="fas fa-laptop-code"></i> Web Dev(beginner) </span>
+                                    <span class="skill-tag"><i class="fas fa-server"></i> Student</span>
+                                </div>
+
+                                <p class="dev-bio">Passionate developer building secure, modern web experience and learner.</p>
+
+                                <div class="contact-info-compact">
+                                    <a href="abhishekyadav954698@gmail.com" class="contact-btn">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/naturelensbyabhi" target="_blank" class="contact-btn">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="erabhishek12" class="contact-btn">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://i-m-er-abhi.vercel.app" class="contact-btn">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials Slider -->
+            <div class="testimonials-section">
+                <h3>What Students Say</h3>
+                <div class="testimonials-carousel">
+                    <button class="carousel-btn prev" id="testimonialPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="testimonials-track" id="testimonialsTrack">
+                        <!-- Testimonials will load dynamically -->
+                        <div class="testimonial-card glass-morphism">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <div class="stars">★★★★★</div>
+                            <p>"Absolutely amazing! The resources are top-notch and completely free. JavaSourceCode changed my career!"</p>
+                            <div class="testimonial-author">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user1" alt="User">
+                                <div>
+                                    <h4>Rahul Sharma</h4>
+                                    <span>Software Engineer</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card glass-morphism">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <div class="stars">★★★★★</div>
+                            <p>"Best platform for learning programming. The notes are crisp and courses are well-organized. Highly recommended!"</p>
+                            <div class="testimonial-author">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user2" alt="User">
+                                <div>
+                                    <h4>Priya Singh</h4>
+                                    <span>Full Stack Developer</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card glass-morphism">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <div class="stars">★★★★★</div>
+                            <p>"As a beginner, I found everything I needed here. The roadmap feature is genius! Thank you JavaSourceCode!"</p>
+                            <div class="testimonial-author">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user3" alt="User">
+                                <div>
+                                    <h4>Amit Patel</h4>
+                                    <span>CS Student</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-btn next" id="testimonialNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ SECTION ========== -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Got Questions?</span>
+                <h2 class="section-title">
+                    <span class="gradient-text-animated">Frequently Asked Questions</span>
+                </h2>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item glass-morphism">
+                    <button class="faq-question">
+                        <span>🎯 Are all resources really free?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! 100% free forever. No hidden costs, no premium tiers, no subscriptions. We believe education should be accessible to everyone.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-morphism">
+                    <button class="faq-question">
+                        <span>📱 Do I need to create an account?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No account required! Access all courses and notes instantly. Your progress is saved locally on your device.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-morphism">
+                    <button class="faq-question">
+                        <span>🔄 How often is content updated?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our Google Sheets database is updated daily! New courses and notes are added regularly based on community requests.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-morphism">
+                    <button class="faq-question">
+                        <span>💾 Can I download notes offline?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! All notes are downloadable as PDFs. Study anytime, anywhere, even without internet.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-morphism">
+                    <button class="faq-question">
+                        <span>🎤 What is voice search?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our AI-powered voice search lets you find courses by speaking! Just click the mic icon and say what you're looking for.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-morphism">
+                    <button class="faq-question">
+                        <span>🏆 How do achievements work?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Earn badges by completing courses, maintaining study streaks, and exploring content. Track your progress in the hero section!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">
+                    <span class="gradient-text-animated">Contact Us</span>
+                </h2>
+                <p class="section-subtitle">Have questions? We're here to help!</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-form-wrapper glass-morphism">
+                    <h3>Send Message</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-comment-alt"></i>
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info-wrapper">
+                    <div class="contact-card glass-morphism">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email Us</h4>
+                        <p>ranvirdevops@gmail.com</p>
+                    </div>
+
+                    <div class="contact-card glass-morphism">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h4>Conta Us</h4>
+                        <p>+919113324452</p>
+                    </div>
+
+                    <div class="contact-card glass-morphism">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Response Time</h4>
+                        <p>Within 24-48 hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="newsletter-section glass-morphism">
+                <div class="newsletter-content">
+                    <h3>📧 Subscribe to Newsletter</h3>
+                    <p>Get weekly updates about new courses and exclusive content</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-code"></i>
+                        <span>Java<span class="highlight">Source</span>Code</span>
+                    </div>
+                    <p>Empowering developers worldwide with free, quality education.</p>
+                    <div class="social-links">
+                        <a href="https://youtube.com/@jsourcecode?si=BiL0_-cWVRJ2PcpS"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/naturelensbyabhi"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#notes">Notes</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                        <li><a href="#team">Team</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#courses">Free Courses</a></li>
+                        <li><a href="#notes">Download Notes</a></li>
+                        <li><a href="#roadmap">Learning Path</a></li>
+                        <li><a href="#contact">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 JavaSourceCode. All rights reserved.</p>
+                <p class="dev-credit">
+                    Crafted with <i class="fas fa-heart"></i> by 
+                    <a href="https://i-er-abhi.vercel.app">Abhishek Kumar</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== FLOATING ACTIONS ========== -->
+    <div class="floating-actions">
+        <button class="fab-btn scroll-top" id="scrollTop" title="Back to Top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <button class="fab-btn help-btn" id="helpBtn" title="Need Help?">
+            <i class="fas fa-question"></i>
+        </button>
+        <button class="fab-btn share-btn" id="shareBtn" title="Share Site">
+            <i class="fas fa-share-alt"></i>
+        </button>
+    </div>
+
+    <!-- ========== MODALS ========== -->
+    <!-- Help Modal -->
+    <div class="modal" id="helpModal">
+        <div class="modal-backdrop" onclick="closeModal('helpModal')"></div>
+        <div class="modal-content glass-morphism">
+            <button class="modal-close" onclick="closeModal('helpModal')">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <i class="fas fa-headset"></i>
+                <h2>How Can We Help?</h2>
+            </div>
+            <div class="modal-body">
+                <div class="help-options">
+                    <a href="ranvirdevops@gmail.com" class="help-option">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Support</h4>
+                            <p>Get help via email</p>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/naturelensbyabhi" class="help-option">
+                        <i class="fab fa-instagram"></i>
+                        <div>
+                            <h4>Instagram DM</h4>
+                            <p>Quick responses</p>
+                        </div>
+                    </a>
+                    <a href="#contact" class="help-option" onclick="closeModal('helpModal')">
+                        <i class="fas fa-comment-dots"></i>
+                        <div>
+                            <h4>Contact Form</h4>
+                            <p>Send detailed message</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Modal -->
+    <div class="modal" id="shareModal">
+        <div class="modal-backdrop" onclick="closeModal('shareModal')"></div>
+        <div class="modal-content glass-morphism">
+            <button class="modal-close" onclick="closeModal('shareModal')">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <i class="fas fa-share-nodes"></i>
+                <h2>Share JavaSourceCode</h2>
+            </div>
+            <div class="modal-body">
+                <p>Help others discover free programming resources!</p>
+                <div class="share-buttons">
+                    <button class="share-btn-social whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </button>
+                    <button class="share-btn-social twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </button>
+                    <button class="share-btn-social facebook">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </button>
+                    <button class="share-btn-social linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </button>
+                </div>
+                <div class="copy-link">
+                    <input type="text" id="shareLink" value="https://javasourcecode.com" readonly>
+                    <button onclick="copyShareLink()">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Initialize particles
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const particleCount = 50;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 2;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--text-muted').trim() || 'rgba(148, 163, 184, 0.3)';
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Free BTech BCA Notes, PYQ & Study Material | AKU BEU Engineering</title>
+    <meta name="title" content="Free BTech BCA Notes, PYQ & Study Material | AKU BEU Engineering">
+    <meta name="description" content="Download free BTech, BCA, MCA notes, previous year questions (PYQ), solutions & video lectures. AKU, BEU university materials for all semesters & branches in Hindi & English.">
+    <meta name="keywords" content="btech notes, engineering notes pdf, bca notes, pyq download, aku notes, beu notes, semester notes, previous year papers, study material free, engineering pyq, cse notes, mechanical notes">
+    <meta name="author" content="Abhishek Kumar">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English, Hindi">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://javasourcecode.com/">
+    <meta property="og:title" content="Free Engineering Notes & PYQ | JavaSourceCode">
+    <meta property="og:description" content="Download free BTech, BCA notes, PYQ, solutions for AKU, BEU. All branches & semesters.">
+    <meta property="og:image" content="https://javasourcecode.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://javasourcecode.com/">
+    <meta property="twitter:title" content="Free Engineering Notes & PYQ">
+    <meta property="twitter:description" content="Download BTech, BCA notes & study material free">
+    <meta property="twitter:image" content="https://javasourcecode.com/twitter-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://javasourcecode.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="IN-BR">
+    <meta name="geo.placename" content="Patna, Bihar">
+    <meta name="geo.position" content="25.5941;85.1376">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "JavaSourceCode",
+      "description": "Free Engineering & Computer Science Study Materials, Notes, PYQ for AKU, BEU",
+      "url": "https://javasourcecode.com",
+      "logo": "https://javasourcecode.com/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Patna",
+        "addressRegion": "Bihar",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.instagram.com/naturelensbyabhi"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "abhishekyadav954698@gmail.com",
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "JavaSourceCode",
+      "url": "https://javasourcecode.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://javasourcecode.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Existing code... -->
+    
+    <!-- UPDATED NAVIGATION with Breadcrumbs -->
+    <nav class="navbar glass-morphism" id="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="location.href='/'">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <span class="logo-text">Java<span class="highlight">Source</span>Code</span>
+                <span class="logo-badge">Free</span>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#courses" class="nav-link">
+                    <i class="fas fa-book-open"></i>
+                    <span>Courses</span>
+                </a>
+                <a href="#notes" class="nav-link">
+                    <i class="fas fa-file-download"></i>
+                    <span>Notes & PYQ</span>
+                </a>
+                <a href="#videos" class="nav-link">
+                    <i class="fab fa-youtube"></i>
+                    <span>Videos</span>
+                </a>
+                <a href="#universities" class="nav-link">
+                    <i class="fas fa-university"></i>
+                    <span>Universities</span>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="icon-btn voice-search" id="voiceSearch" title="Voice Search">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button class="icon-btn theme-toggle" id="themeToggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMB NAVIGATION (SEO Important) -->
+    <div class="breadcrumb-container" id="breadcrumbNav" style="display: none;">
+        <div class="container">
+            <nav class="breadcrumb">
+                <!-- Dynamic breadcrumbs will load here -->
+            </nav>
+        </div>
+    </div>
+
+    <!-- Rest of your existing HTML... -->
+    
+    <!-- ENHANCED COURSES SECTION with Hierarchy -->
+    <section class="courses-section" id="courses">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📚 Study Materials</span>
+                <h1 class="section-title">
+                    <span class="gradient-text-animated">Select Your Course</span>
+                </h1>
+                <p class="section-subtitle">BTech, BCA, MCA - All Branches, All Semesters | AKU, BEU & More</p>
+            </div>
+
+            <!-- STEP 1: Course Selection -->
+            <div class="hierarchy-step" id="courseStep">
+                <h2 class="step-title">Choose Course</h2>
+                <div class="course-grid" id="courseGrid">
+                    <!-- Courses will load from Sheet 1 -->
+                </div>
+            </div>
+
+            <!-- STEP 2: Branch Selection -->
+            <div class="hierarchy-step" id="branchStep" style="display: none;">
+                <div class="step-header">
+                    <button class="back-btn" onclick="goBack('course')">
+                        <i class="fas fa-arrow-left"></i> Back to Courses
+                    </button>
+                    <h2 class="step-title" id="selectedCourse">Select Branch</h2>
+                </div>
+                <div class="branch-grid" id="branchGrid">
+                    <!-- Branches will load from Sheet 2 -->
+                </div>
+            </div>
+
+            <!-- STEP 3: Semester Selection -->
+            <div class="hierarchy-step" id="semesterStep" style="display: none;">
+                <div class="step-header">
+                    <button class="back-btn" onclick="goBack('branch')">
+                        <i class="fas fa-arrow-left"></i> Back to Branches
+                    </button>
+                    <h2 class="step-title" id="selectedBranch">Select Semester</h2>
+                </div>
+                <div class="semester-grid" id="semesterGrid">
+                    <!-- Semesters will load from Sheet 3 -->
+                </div>
+            </div>
+
+            <!-- STEP 4: Subject Selection -->
+            <div class="hierarchy-step" id="subjectStep" style="display: none;">
+                <div class="step-header">
+                    <button class="back-btn" onclick="goBack('semester')">
+                        <i class="fas fa-arrow-left"></i> Back to Semesters
+                    </button>
+                    <h2 class="step-title" id="selectedSemester">Select Subject</h2>
+                </div>
+                <div class="subject-grid" id="subjectGrid">
+                    <!-- Subjects will load from Sheet 4 -->
+                </div>
+            </div>
+
+            <!-- STEP 5: Resources Display -->
+            <div class="hierarchy-step" id="resourceStep" style="display: none;">
+                <div class="step-header">
+                    <button class="back-btn" onclick="goBack('subject')">
+                        <i class="fas fa-arrow-left"></i> Back to Subjects
+                    </button>
+                    <h2 class="step-title" id="selectedSubject">Available Resources</h2>
+                </div>
+
+                <!-- Resource Type Filters -->
+                <div class="resource-filters">
+                    <button class="resource-filter-btn active" data-type="all">
+                        <i class="fas fa-border-all"></i> All Resources
+                    </button>
+                    <button class="resource-filter-btn" data-type="Notes">
+                        <i class="fas fa-file-pdf"></i> Notes
+                    </button>
+                    <button class="resource-filter-btn" data-type="Video">
+                        <i class="fab fa-youtube"></i> Videos
+                    </button>
+                    <button class="resource-filter-btn" data-type="PYQ">
+                        <i class="fas fa-question-circle"></i> PYQ
+                    </button>
+                    <button class="resource-filter-btn" data-type="Solution">
+                        <i class="fas fa-check-circle"></i> Solutions
+                    </button>
+                </div>
+
+                <!-- Language Filter -->
+                <div class="language-filter">
+                    <select id="languageFilter" class="custom-select">
+                        <option value="all">All Languages</option>
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Bilingual">Bilingual</option>
+                    </select>
+                </div>
+
+                <div class="resources-grid" id="resourcesGrid">
+                    <!-- Resources will load from Sheet 5 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UPDATED TEAM SECTION with Website Button -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Meet The Team</span>
+                <h2 class="section-title">
+                    <span class="gradient-text-animated">Our Amazing Team</span>
+                </h2>
+                <p class="section-subtitle">Dedicated to providing free quality education</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Owner Flip Card -->
+                <div class="team-card-flip">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front glass-morphism">
+                            <div class="team-image">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=owner" alt="Owner">
+                                <div class="team-role-badge">Founder</div>
+                            </div>
+                            <h3>JavaSourceCode Team</h3>
+                            <p class="team-role">Founder & Educator</p>
+                            <div class="flip-indicator">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Hover to flip</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flip-card-back glass-morphism">
+                            <div class="back-content">
+                                <div class="back-header">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <h3>About Us</h3>
+                                </div>
+                                <p>Making quality programming & engineering education accessible to everyone, free forever.</p>
+                                
+                                <div class="team-stats">
+                                    <div class="team-stat">
+                                        <i class="fas fa-users"></i>
+                                        <span>50K+ Students</span>
+                                    </div>
+                                    <div class="team-stat">
+                                        <i class="fas fa-book"></i>
+                                        <span>500+ Resources</span>
+                                    </div>
+                                </div>
+
+                                <div class="social-links-vertical">
+                                    <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-btn"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Developer Flip Card with VISIT WEBSITE Button -->
+                <div class="team-card-flip">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front glass-morphism">
+                            <div class="team-image">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=abhishek" alt="Abhishek Kumar">
+                                <div class="team-role-badge developer">Developer</div>
+                            </div>
+                            <h3>Abhishek Kumar</h3>
+                            <p class="team-role">Full Stack Developer</p>
+                            <div class="flip-indicator">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Hover to flip</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flip-card-back glass-morphism">
+                            <div class="back-content">
+                                <div class="back-header">
+                                    <i class="fas fa-code"></i>
+                                    <h3>Abhishek Kumar</h3>
+                                </div>
+                                
+                                <div class="dev-tags">
+                                    <span class="skill-tag"><i class="fas fa-shield-alt"></i> Cybersecurity</span>
+                                    <span class="skill-tag"><i class="fas fa-laptop-code"></i> Web Dev</span>
+                                </div>
+
+                                <p class="dev-bio">Building secure, modern web experiences for learners.</p>
+
+                                <!-- VISIT WEBSITE BUTTON -->
+                                <a href="https://yourportfolio.com" target="_blank" class="visit-website-btn">
+                                    <i class="fas fa-globe"></i>
+                                    <span>Visit Website</span>
+                                </a>
+
+                                <div class="contact-info-compact">
+                                    <a href="mailto:abhishekyadav954698@gmail.com" class="contact-btn" title="Email">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/naturelensbyabhi" target="_blank" class="contact-btn" title="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="https://github.com/yourusername" target="_blank" class="contact-btn" title="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-btn" title="LinkedIn">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add to Footer before closing tag -->
+    <script src="script.js"></script>
+</body>
+</html>
