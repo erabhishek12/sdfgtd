@@ -281,9 +281,9 @@ async function fetchAllData() {
 }
 
 function showError(message) {
-    const courseGrid = document.getElementById('courseGrid');
-    if (courseGrid) {
-        courseGrid.innerHTML = `
+    const coursesGrid = document.getElementById('coursesGrid');
+    if (coursesGrid) {
+        coursesGrid.innerHTML = `
             <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
                 <i class="fas fa-exclamation-triangle" style="font-size: 64px; color: #EF4444; margin-bottom: 20px;"></i>
                 <h3 style="color: var(--text-primary); margin-bottom: 15px;">Error Loading Content</h3>
@@ -384,7 +384,7 @@ function scrollToTop() {
 // ==========================================
 
 function renderCourses() {
-    const grid = document.getElementById('courseGrid');
+    const grid = document.getElementById('coursesGrid');
     
     grid.innerHTML = AppState.courses.map(course => `
         <div class="course-item glass-morphism" onclick="selectCourse(${course.ID})">
@@ -679,4 +679,5 @@ function debounce(func, wait) {
 
 console.log('%c📚 Hierarchical Navigation Ready! ', 'color: #10B981; font-size: 14px; font-weight: bold;');
 console.log('%c6 Sheets: Courses → Branches → Semesters → Subjects → Resources', 'color: #64748B; font-size: 12px;');
+
 console.log('%c🔍 SEO Optimized | 🎤 Voice Search | 📊 Download Tracking', 'color: #4F46E5; font-size: 11px;');
